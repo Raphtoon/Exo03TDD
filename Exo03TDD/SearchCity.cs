@@ -14,20 +14,17 @@ namespace Exo03TDD.Bibliotheque
 
         public List<string> SearchCityByName(string word)
         {
-            if (word =="*")
-                return _cities;
+            if (word == "*")
+                return Cities;
             if (word.Length >= 2)
             {
                 string wordWithUpperStart = char.ToUpper(word[0]) + word.Substring(1);
 
-                List<string> villesTrouvees = Cities
-                    .Where(c => c.StartsWith(wordWithUpperStart) || c.Contains(word))
-                    .ToList();
-
+                List<string> villesTrouvees = Cities.Where(c => c.StartsWith(wordWithUpperStart) || c.Contains(word)).ToList();
                 return villesTrouvees;
             }
             else
-            throw new NotFoundException();  
+                throw new NotFoundException();
         }
     }
 }
