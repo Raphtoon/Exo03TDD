@@ -2,8 +2,6 @@ using Exo03TDD.Bibliotheque;
 
 namespace SearchTests
 {
-    //   Par exemple, pour le texte de recherche "Va", la fonction doit renvoyer Valence et Vancouver 
-    //3. La fonctionnalité de recherche doit être insensible à la casse
     //4. La fonctionnalité de recherche devrait également fonctionner lorsque le texte de recherche n'est qu'une partie d'un nom de ville
     //   Par exemple "ape" devrait renvoyer la ville "Budapest"
     //5. Si le texte de recherche est un « * » (astérisque), il doit renvoyer tous les noms de ville.
@@ -20,6 +18,7 @@ namespace SearchTests
             //Act 
             //searchCity.SearchCityByName("a");
 
+            //Assert
             Assert.Throws<NotFoundException>(() => searchCity.SearchCityByName("a"));
         }
 
@@ -29,10 +28,27 @@ namespace SearchTests
         //    2. Si le texte de recherche est égal ou supérieur à 2 caractères, il doit renvoyer tous les noms de ville commençant par le texte de recherche exact.
         public void When_Search_EqualOrMoreThan2_ReturnCityStartBy()
         {
+            //Arrange
             SearchCity searchCity = new SearchCity();
+
             //Act 
             var result = searchCity.SearchCityByName("Pa");
-            List<string> expected = new List<string>() {"Paris"};
+            List<string> expected = new List<string>() { "Paris" };
+
+            //Assert
+            CollectionAssert.AreEqual(expected, result);
+        }
+        [Test]
+        //3. La fonctionnalité de recherche doit être insensible à la casse
+        public void When_Search_CaseInsensitive_ReturnCity()
+        {
+            //Arrange
+            SearchCity searchCity = new SearchCity();
+            //Act 
+            var result = searchCity.SearchCityByName("pa");
+            List<string> expected = new List<string>() { "Paris" };
+
+            //Assert
             CollectionAssert.AreEqual(expected, result);
         }
     }
