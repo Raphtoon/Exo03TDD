@@ -3,7 +3,6 @@ using Exo03TDD.Bibliotheque;
 namespace SearchTests
 {
 
-    //5. Si le texte de recherche est un « * » (astérisque), il doit renvoyer tous les noms de ville.
     [TestFixture]
     public class Tests
     {
@@ -20,7 +19,6 @@ namespace SearchTests
             //Assert
             Assert.Throws<NotFoundException>(() => searchCity.SearchCityByName("a"));
         }
-
 
 
         [Test]
@@ -58,6 +56,16 @@ namespace SearchTests
             var result = searchCity.SearchCityByName("ari");
             List<string> expected = new List<string>() { "Paris" };
             CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        //Si le texte de recherche est un « * » (astérisque), il doit renvoyer tous les noms de ville.
+        public void When_Search_Is_Asterisk_ReturnAllCity()
+        {
+            SearchCity searchCity = new SearchCity();
+            var result = searchCity.SearchCityByName("*");
+            List<string> expected = new List<string>() { "Paris" };
+            CollectionAssert.AreEqual(searchCity.Cities, result);
         }
     }
 }
