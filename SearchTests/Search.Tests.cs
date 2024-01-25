@@ -2,8 +2,7 @@ using Exo03TDD.Bibliotheque;
 
 namespace SearchTests
 {
-    //4. La fonctionnalité de recherche devrait également fonctionner lorsque le texte de recherche n'est qu'une partie d'un nom de ville
-    //   Par exemple "ape" devrait renvoyer la ville "Budapest"
+
     //5. Si le texte de recherche est un « * » (astérisque), il doit renvoyer tous les noms de ville.
     [TestFixture]
     public class Tests
@@ -49,6 +48,15 @@ namespace SearchTests
             List<string> expected = new List<string>() { "Paris" };
 
             //Assert
+            CollectionAssert.AreEqual(expected, result);
+        }
+        [Test]
+        //4. La fonctionnalité de recherche devrait également fonctionner lorsque le texte de recherche n'est qu'une partie d'un nom de ville
+        public void When_Search_Is_Contain_In_Any_City_ReturnCityContainSearch()
+        {
+            SearchCity searchCity = new SearchCity();
+            var result = searchCity.SearchCityByName("ari");
+            List<string> expected = new List<string>() { "Paris" };
             CollectionAssert.AreEqual(expected, result);
         }
     }
