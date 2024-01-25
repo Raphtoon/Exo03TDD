@@ -12,6 +12,7 @@ namespace Exo03TDD.Bibliotheque
 
         public List<string> Cities { get => _cities; set => _cities = value; }
 
+
         public List<string> SearchCityByName(string word)
         {
             if (word == "*")
@@ -19,9 +20,7 @@ namespace Exo03TDD.Bibliotheque
             if (word.Length >= 2)
             {
                 string wordWithUpperStart = char.ToUpper(word[0]) + word.Substring(1);
-
-                List<string> villesTrouvees = Cities.Where(c => c.StartsWith(wordWithUpperStart) || c.Contains(word)).ToList();
-                return villesTrouvees;
+                return Cities.Where(c => c.StartsWith(wordWithUpperStart) || c.Contains(word)).ToList();
             }
             else
                 throw new NotFoundException();
