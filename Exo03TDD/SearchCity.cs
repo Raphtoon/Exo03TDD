@@ -18,7 +18,7 @@ namespace Exo03TDD.Bibliotheque
                 List<String> villesTrouvees = new List<String>();
                 foreach (string c in _cities)
                 {
-                    if (c.StartsWith(word))
+                    if (c.StartsWith(word.Substring(0, 1).ToUpper() + word.Substring(1)))
                     {
                         villesTrouvees.Add(c);
                     }
