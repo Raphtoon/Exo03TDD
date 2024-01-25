@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo03TDD", "Exo03TDD\Exo03TDD.csproj", "{1AC8B958-B081-4309-B8C8-083B0757BCB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo03TDD.Bibliotheque", "Exo03TDD\Exo03TDD.Bibliotheque.csproj", "{1AC8B958-B081-4309-B8C8-083B0757BCB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exo03TDD.Core", "Exo03TDD.Core", "{47F0D641-DA12-47D8-B31F-52158EB81B1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exo03TDD.Tests", "Exo03TDD.Tests", "{16C3E603-E2E8-4340-988E-149EC79C98B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchTests", "SearchTests\SearchTests.csproj", "{C4295EDD-9E37-4191-A8B9-C43C6B81FF2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{1AC8B958-B081-4309-B8C8-083B0757BCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC8B958-B081-4309-B8C8-083B0757BCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC8B958-B081-4309-B8C8-083B0757BCB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4295EDD-9E37-4191-A8B9-C43C6B81FF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4295EDD-9E37-4191-A8B9-C43C6B81FF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4295EDD-9E37-4191-A8B9-C43C6B81FF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4295EDD-9E37-4191-A8B9-C43C6B81FF2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AC8B958-B081-4309-B8C8-083B0757BCB3} = {47F0D641-DA12-47D8-B31F-52158EB81B1F}
+		{C4295EDD-9E37-4191-A8B9-C43C6B81FF2C} = {16C3E603-E2E8-4340-988E-149EC79C98B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47D0A222-1EA1-45B5-A40A-7E4290FC4480}
