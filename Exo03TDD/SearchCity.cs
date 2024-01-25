@@ -13,9 +13,20 @@ namespace Exo03TDD.Bibliotheque
 
         public List<string> SearchCityByName(string word)
         {
-            if(word.Length < 2 )
-            throw new NotFoundException();
-            else return _cities;
+            if (word.Length >= 2)
+            {
+                List<String> villesTrouvees = new List<String>();
+                foreach (string c in _cities)
+                {
+                    if (c.StartsWith(word))
+                    {
+                        villesTrouvees.Add(c);
+                    }
+                }
+                return villesTrouvees;
+            }
+            else
+            throw new NotFoundException();  
         }
     }
 }

@@ -23,16 +23,17 @@ namespace SearchTests
             Assert.Throws<NotFoundException>(() => searchCity.SearchCityByName("a"));
         }
 
+
+
         [Test]
         //    2. Si le texte de recherche est égal ou supérieur à 2 caractères, il doit renvoyer tous les noms de ville commençant par le texte de recherche exact.
         public void When_Search_EqualOrMoreThan2_ReturnCityStartBy()
         {
             SearchCity searchCity = new SearchCity();
             //Act 
-            var result = searchCity.SearchCityByName("a");
-            List<String> expected = new List<String>() { "Valence", "Vancouver" };
+            var result = searchCity.SearchCityByName("Pa");
+            List<string> expected = new List<string>() {"Paris"};
             CollectionAssert.AreEqual(expected, result);
-
         }
     }
 }
