@@ -16,9 +16,10 @@ namespace Exo03TDD.Bibliotheque
             if (word.Length >= 2)
             {
                 List<String> villesTrouvees = new List<String>();
+                string worrWithUpperStart = word.Substring(0, 1).ToUpper() + word.Substring(1);
                 foreach (string c in _cities)
                 {
-                    if (c.StartsWith(word.Substring(0, 1).ToUpper() + word.Substring(1)))
+                    if (c.StartsWith(worrWithUpperStart) || c.Contains(word))
                     {
                         villesTrouvees.Add(c);
                     }
