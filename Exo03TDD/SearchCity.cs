@@ -19,8 +19,7 @@ namespace Exo03TDD.Bibliotheque
                 return Cities;
             if (word.Length >= 2)
             {
-                string wordWithUpperStart = char.ToUpper(word[0]) + word.Substring(1);
-                return Cities.Where(c => c.StartsWith(wordWithUpperStart) || c.Contains(word)).ToList();
+                return Cities.Where(c => c.StartsWith(char.ToUpper(word[0]) + word.Substring(1)) || c.Contains(word)).ToList();
             }
             else
                 throw new NotFoundException();
